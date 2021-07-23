@@ -1,0 +1,31 @@
+<ibm-header name="[Platform]" route="/" [useRouter]="true">
+  <ibm-hamburger
+    (click)="sideMenuExpandend = !sideMenuExpandend"
+    (selected)="hasHamburger = !hasHamburger"
+    [active]="sideMenuExpandend"
+    class="bx--header__menu-toggle__hidden">
+  </ibm-hamburger>
+  <ibm-header-navigation
+    (click)="onMenuItemClick($event)"
+    [navigationItems]="headerItems">
+  </ibm-header-navigation>
+  <ibm-sidenav
+    (click)="onMenuItemClick($event)"
+    [expanded]="sideMenuExpandend"
+    [rail]="false"
+    [hidden]="!sideMenuExpandend"
+    [navigationItems]="headerItems"
+    class="bx--header__menu-toggle__hidden">
+  </ibm-sidenav>
+  <ibm-header-global>
+    <ibm-header-action title="action">
+      <svg ibmIcon="notification" size="20"></svg>
+    </ibm-header-action>
+    <ibm-header-action title="action">
+      <svg ibmIcon="user--avatar" size="20"></svg>
+    </ibm-header-action>
+    <ibm-header-action title="action">
+      <svg ibmIcon="app-switcher" size="20"></svg>
+    </ibm-header-action>
+  </ibm-header-global>
+</ibm-header>
